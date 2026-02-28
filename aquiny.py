@@ -1,4 +1,6 @@
 # Goal: Build a cli assistant that can trigger voice based notifications.
+# Debug Example: python aquiny.py "remind me to call Arham in 10 minutes"
+# Release Example: aquiny "remind me to call Arham in 10 minutes"
 
 import os
 import subprocess
@@ -101,11 +103,11 @@ Return JSON only.
     return combined
 
 
-print("Generating notification content ...")
+print("🤖 Generating notification content ...")
 structured_data = parse_reminder("Arham", args.prompt)
 
 # creating speech with kittenTTS
-print("Generating notification voice ...")
+print("📢 Generating notification voice ...")
 m = KittenTTS("KittenML/kitten-tts-mini-0.8")
 audio = m.generate(structured_data['message'], voice='Hugo', speed=1.2)
 
@@ -114,6 +116,7 @@ notification_id = uuid.uuid4()
 sf.write(f'{notification_id}.wav', audio, 24000)
 
 # schedule the notification and playback
+print("⏰ Scheduling notification ...")
 def schedule(args, isodatetime):
     dt = datetime.fromisoformat(isodatetime)
     timestamp = dt.strftime("%Y-%m-%d %H:%M:%S")
@@ -139,4 +142,4 @@ def schedule(args, isodatetime):
     )
 
 schedule(['bash', 'notify.sh', f'{notification_id}', structured_data['title'], structured_data['message']], structured_data['datetime'])
-print("Scheduled your notification, will trigger at", structured_data['datetime'])
+print("✅ Notification scheduled, will trigger exactly at", structured_data['datetime'])
