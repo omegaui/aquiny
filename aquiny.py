@@ -46,7 +46,7 @@ Rules:
 Schema:
 {{
   "title": "short event title",
-  "message": "a friendly message with 'hey ${user_name}', to be spoken by assistant when notification is due",
+  "message": "a friendly message, to be spoken by assistant when notification is due. example: hey {user_name}, it's time to rest.",
   "datetime": "ISO8601 string",
   "confidence": number between 0 and 1
 }}
@@ -108,7 +108,7 @@ structured_data = parse_reminder("Arham", args.prompt)
 # creating speech with kittenTTS
 print("Generating notification voice ...")
 m = KittenTTS("KittenML/kitten-tts-mini-0.8")
-audio = m.generate(structured_data['message'], voice='Jasper')
+audio = m.generate(structured_data['message'], voice='Hugo', speed=1.2)
 
 # assign an id to notification
 notification_id = uuid.uuid4()
