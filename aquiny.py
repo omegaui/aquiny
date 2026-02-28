@@ -1,16 +1,15 @@
 # Goal: Build a cli assistant that can trigger voice based notifications.
 
-import soundfile as sf
+import os
+import subprocess
 import json
 import uuid
 import requests
 import argparse
 import logging
+import soundfile as sf
 from datetime import datetime
 from kittentts import KittenTTS
-import os
-import subprocess
-from datetime import datetime
 
 logging.disable(logging.WARNING)
 
