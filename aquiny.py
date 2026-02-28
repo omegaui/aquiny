@@ -1,3 +1,4 @@
+# @author: omegaui
 # Goal: Build a cli assistant that can trigger voice based notifications.
 # Debug Example: python aquiny.py "remind me to call Arham in 10 minutes"
 # Release Example: aquiny "remind me to call Arham in 10 minutes"
