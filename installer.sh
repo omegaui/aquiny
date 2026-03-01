@@ -11,6 +11,9 @@ echo "5. Creates a python virtual environment with python3.12 (prerequisite)"
 echo "6. Installs kittenTTS 0.8.1 model"
 echo "7. Copies aquiny (shell script) to /usr/bin/aquiny"
 
+echo "Press any key to continue or Ctrl + C to cancel"
+read $next
+
 mkdir -p "$HOME/.local/share/aquiny"
 cp aquiny.py "$HOME/.local/share/aquiny" 
 cp notify.sh "$HOME/.local/share/aquiny" 
