@@ -4,6 +4,8 @@ https://github.com/user-attachments/assets/7e0a18fa-cf4d-43dd-9a80-b8c8bdc102a0
 
 
 
+The above example is running on a laptop with intel i5 CPU, NO GPU.
+If you have a GPU then performance will be exponentially faster.
 
 ![Python](https://img.shields.io/badge/python-3.12-blue?logo=python&logoColor=white)
 ![Ollama](https://img.shields.io/badge/ollama-qwen2.5:7b-purple?logo=ollama&logoColor=white)
